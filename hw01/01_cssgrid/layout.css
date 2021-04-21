@@ -69,7 +69,7 @@ nav{
         display: none;
     }
     header{
-        width: 100vh;
+        width: 100%;
         background-color: teal;
     }
 }
