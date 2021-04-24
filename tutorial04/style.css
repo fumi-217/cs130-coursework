@@ -1,21 +1,99 @@
 /* You're welcome to change any of this! */
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
 * {
     box-sizing: border-box;
+    font-family: 'Unica One', cursive;
+}
+body{
+    background-color: papayawhip;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 1fr;
+    grid-template-areas:
+    "a"
+    "b";
+    color: goldenrod;
+}
+main{
+    grid-area: b;
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5px;
 }
 
-body {
-    margin: 0px;
-    font-family: Arial, sans-serif;
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: a;
+
 }
-header, section {
+section > div{
+    border: solid 1px goldenrod;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    height: 100vh;
+    background-color: #e6ded7;
+}
+h1{
+    font-size: 300%;
+}
+h2{ text-align: center;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     padding: 20px;
+    margin-top: 0px;
+    color: #cfe3ec;
+    background-color:#d74e6b;
+    font-size: 200%;
 }
-p, li {
-    line-height: 1.5em;
+#tutorials > div > h2{
+    background-color:#849163;
+}
+#homework > div > h2{
+    background-color:#de8924;
+}
+p{ text-align: center;
+}
+a{
+    display: block;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: whitesmoke;
 }
 
-#inspiration {
-    background-color: #F0F0F0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+#tutorials{
+    width: 33%;
+    padding: 10px;
+}
+#homework{
+    width: 33%;
+    padding:10px;
+}
+#inspiration{
+    width: 33%;
+    padding: 10px;
+}
+p:hover > a{
+    padding: 15px;
+}
+
+a{
+    color:  #ae8d73;
+}
+@media screen and (max-width: 900px) {
+   #tutorials,#homework,#inspiration{
+       width: 100%;
+   }
+   section > div {
+       height: 50vh;
+       border-radius: 20px;
+   }
+
 }
