@@ -36,9 +36,14 @@ section > div{
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    height: 100vh;
+    height: auto;
     background-color: #e6ded7;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-bottom: 20px;
 }
+
 h1{
     font-size: 300%;
 }
@@ -87,13 +92,23 @@ p:hover > a{
 a{
     color:  #ae8d73;
 }
+img{
+    width: 70%;
+    height: auto;
+    align-self: center;
+}
+
 @media screen and (max-width: 900px) {
    #tutorials,#homework,#inspiration{
        width: 100%;
    }
    section > div {
-       height: 50vh;
+       height: auto;
        border-radius: 20px;
+   }
+   h2{
+       border-top-left-radius: 20px;
+       border-top-right-radius: 20px;
    }
 
 }
