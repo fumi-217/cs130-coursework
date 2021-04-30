@@ -68,8 +68,8 @@ a{
     display: block;
     border-radius: 20px;
     padding: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
     background-color: whitesmoke;
 }
 
@@ -93,7 +93,7 @@ a{
     color:  #ae8d73;
 }
 img{
-    width: 70%;
+    width: 80%;
     height: auto;
     align-self: center;
 }
