@@ -9,12 +9,12 @@ body {
     overflow: scroll;
     margin: 0px;
     grid-template-columns: auto;
-    grid-template-rows: 10vh 90vh auto 100vh;
+    grid-template-rows: 10vh 90vh auto 50vh;
     grid-template-areas:  
     "a"
     "b"
     "c"
-    "d"
+    "d";
 }
 div{
     border: 1px dashed black;
@@ -36,18 +36,56 @@ main{
     grid-template-areas: c;
     background-color: white;
     border: 1px solid black;
-    display: block;
+    display: block
 }
-/* Profile */
-#about-me{
+/* Features Recipes*/
+.content{
+    height: auto;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 60vh;
 }
-/* Projects  */
+#recipe-card{
+    height: auto;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.title{
+    width: 100%;
+    margin: 0px;
+}
+.ing{
+    width: 50%;
+    border: none;
+    margin: 0px;
+}
+.dir{
+    width: 50%;
+    border: none;
+    margin: 0px;
+}
+/* photo-card */
+#photo-card{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+/* video-card */
+#video-card{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/* Files  */
 #projects{
-    height: 50vh;
+    height: 30vh;
     width: 100vw;
     display: flex;
 }
@@ -65,72 +103,16 @@ main{
 }
 .file{
     height: 100%;
-    width: 400px;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url('icons/folder.png');
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
-
-/* Photos */
-#photos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    width: 100vw;
-}
-#slide-show{
-    background-image: url(art/Art1.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Films */
-#films{
-    display: flex;
-}
-#scroll-videos{
-    height: 50vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-x: auto;
-    overflow-y: hidden;
-    flex-wrap: wrap;
-}
-.video{
-    height: 100%;
-    width: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('icons/film.png');
-    background-size: cover;
-}
-
-/* Art Work */
-#art{
-    height: 70vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-.featured_image{
-    height: 80%;
-    width: 40%;
-    background-size: cover;
-    background-position: center;
-}
+/* .file > img{
+} */
 /* Footer */
 footer{
     grid-template-areas: d;
@@ -160,4 +142,14 @@ footer{
 }
 .scroll::-webkit-scrollbar{
     display: none;
+}
+#card, #image, #video{
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#card{
+    background-color: white;
+    border-bottom: 0px;
 }

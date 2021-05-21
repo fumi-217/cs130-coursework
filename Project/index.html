@@ -10,18 +10,52 @@
 
         </nav>
         <header>
-            <h1> Fumika Hoshi </h1>
+            <h1> Recipes </h1>
         </header>
         <main>
-            <section id="about-me">
-                <h2>Hello!</h2>
-                <p>I am blah blah blah</p>
+            <section id="featured-recipe">
+                <nav>
+                    <button id="card">Recipes</button>
+                    <button id="image">Photos</button>
+                    <button id="video">Video</button>
+                </nav>
+                <div class="content">
+                    <div id="recipe-card">
+                        <h2 class="title">Recipe</h2>
+                        <div class="ing">
+                            <h3>Ingredients</h3>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="dir">
+                            <h3>Directions</h3>
+                            <ol>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div id="photo-card" style="background-image:url(''); display: none;">
+                        <!-- chang image using buttons -->
+                        <button class="prev">&lsaquo;</button>
+                        <button class="next">&rsaquo;</button>
+                    </div>
+                    <div id="video-card" style="background-image:url('icons/film.png'); display: none;">
+                        <!-- link to video -->
+                    </div>
+                </div>
             </section>
             <section id="projects">
                 <div class="script">
                     <h3>Explanation</h3>
                 </div>
-                <div id="scroll-files" class="scroll">
+                <div id="scroll-files">
                     <div class="file">
                         <h3>File1</h3>
                         <img src='' /> 
@@ -48,38 +82,10 @@
                     </div>
                 </div>
             </section>
-            <section id="photos">
-                <div id="slide-show"></div>
-            </section>
-            <section id="films" class="scroll">
-                <div id="scroll-videos">
-                    <div class="video">
-                        <h3>Video1</h3>
-                        <img src='' />
-                    </div>
-                    <div class="video">
-                        <h3>Video2</h3>
-                        <img src='' />
-                    </div>
-                    <div class="video">
-                        <h3>Video3</h3>
-                        <img src='' />
-                    </div>
-                    <div class="video">
-                        <h3>Video4</h3>
-                        <img src='' />
-                    </div>
-                </div>
-            </section>
-            <section id="art">
-                <button class="prev">&lsaquo;</button>
-                <div class="featured_image" style="background-image:url('art/Art1.jpg')"></div>
-                <button class="next">&rsaquo;</button>
-            </section>
         </main>
         <footer>  
             <section id="get-in-touch">
-                <p>blah blah</p>
+                <p>FOOTER</p>
                 <button>Get in Touch</button>
             </section>   
             <section id="links">
