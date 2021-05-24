@@ -54,9 +54,9 @@ main {
 }
 
 footer {
-    visibility: hidden;
     grid-area: bottom;
-    border-top: dotted #999 1px;   
+    border-top: dotted #999 1px; 
+    visibility: hidden;  
 }
 .footerplay{
     visibility:visible;

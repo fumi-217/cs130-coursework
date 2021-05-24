@@ -84,7 +84,18 @@ const displayTracks = (t) => {
         document.querySelector("#tracks").innerHTML = ""
         const lentracks = t.length;
         for (let i = 0; i < Math.min(5,lentracks); i++){
-            template = `<section class="track-item preview" data-preview-track="${t[i].preview_url}" onclick="playAudio(event)">
+            if(t[i].preview_url == null){
+                template = `<section class="track-item preview" >
+                                <img src="${t[i].album.image_url}">
+                                <div class="label">
+                                    <h3>${t[i].name}</h3>
+                                    <p>
+                                        ${t[i].artist.name}
+                                    </p>
+                                </div>
+                            </section>`;
+            } else{
+                template = `<section class="track-item preview" data-preview-track="${t[i].preview_url}" onclick="playAudio(event)">
                             <img src="${t[i].album.image_url}">
                             <i class="fas play-track fa-play" aria-hidden="true"></i>
                             <div class="label">
@@ -94,6 +105,7 @@ const displayTracks = (t) => {
                                 </p>
                             </div>
                         </section>`;
+            }
             document.querySelector('#tracks').innerHTML += template;
         }
     }
@@ -120,10 +132,14 @@ const displayAlbums = (alb) => {
     }
 };
 const playAudio = (ev) => {
-    document.querySelector('footer > .track-item').innerHTML = ev.currentTarget.innerHTML;
-    audioPlayer.setAudioFile(ev.currentTarget.getAttribute('data-preview-track'));
-    audioPlayer.play();
-    document.querySelector('footer').classList.add('footerplay')
+    if (ev.currentTarget.getAttribute('data-preview-track') == 'null'){
+        console.log('there is no preview url available');
+    } else{
+        document.querySelector('footer > .track-item').innerHTML = ev.currentTarget.innerHTML;
+        audioPlayer.setAudioFile(ev.currentTarget.getAttribute('data-preview-track'));
+        audioPlayer.play();
+        document.querySelector('footer').classList.add('footerplay')
+    }
 };
 const displayTracksOfArtist = (ev) => {
     const at = ev.currentTarget.getAttribute('id');
@@ -140,19 +156,32 @@ const displayTracksOfArtist = (ev) => {
             document.querySelector("#tracks").innerHTML = ""
             const lentracks = data.tracks.length;
             for (let i = 0; i < Math.min(5,lentracks); i++){
-                template = `<section class="track-item preview" data-preview-track="${data.tracks[i].preview_url}" onclick="playAudio(event)">
-                                <img src="${data.tracks[i].album.images[2].url}">
-                                <i class="fas play-track fa-play" aria-hidden="true"></i>
-                                <div class="label">
-                                    <h3>${data.tracks[i].name}</h3>
-                                    <p>
-                                        ${data.tracks[i].artists[0].name}
-                                    </p>
-                                </div>
-                            </section>`;
-                document.querySelector('#tracks').innerHTML += template;
+                if(data.tracks[i].preview_url == null){
+                    console.log("no preview available")
+                    template = `<section class="track-item preview" >
+                                    <img src="${data.tracks[i].album.images[2].url}">
+                                    <div class="label">
+                                        <h3>${data.tracks[i].name}</h3>
+                                        <p>
+                                            ${data.tracks[i].artists[0].name}
+                                        </p>
+                                    </div>
+                                </section>`;
+                }else{
+                    template = `<section class="track-item preview" data-preview-track="${data.tracks[i].preview_url}" onclick="playAudio(event)">
+                                    <img src="${data.tracks[i].album.images[2].url}">
+                                    <i class="fas play-track fa-play" aria-hidden="true"></i>
+                                    <div class="label">
+                                        <h3>${data.tracks[i].name}</h3>
+                                        <p>
+                                            ${data.tracks[i].artists[0].name}
+                                        </p>
+                                    </div>
+                                </section>`;
                 }
+                document.querySelector('#tracks').innerHTML += template;
             }
+        }
        
     });
 }
@@ -172,16 +201,28 @@ const displayTracksOfAlbum = (ev) => {
             document.querySelector("#tracks").innerHTML = ""
             const lentracks = data.items.length;
             for (let i = 0; i < Math.min(5,lentracks); i++){
-                template = `<section class="track-item preview" data-preview-track="${data.items[i].preview_url}" onclick="playAudio(event)">
-                                <img src="${im}">
-                                <i class="fas play-track fa-play" aria-hidden="true"></i>
-                                <div class="label">
-                                    <h3>${data.items[i].name}</h3>
-                                    <p>
-                                        ${data.items[i].artists[0].name}
-                                    </p>
-                                </div>
-                            </section>`;
+                if(data.items[i].preview_url == null){
+                    template = `<section class="track-item preview">
+                                    <img src="${im}">
+                                    <div class="label">
+                                        <h3>${data.items[i].name}</h3>
+                                        <p>
+                                            ${data.items[i].artists[0].name}
+                                        </p>
+                                    </div>
+                                </section>`;
+                } else{
+                    template = `<section class="track-item preview" data-preview-track="${data.items[i].preview_url}" onclick="playAudio(event)">
+                                    <img src="${im}">
+                                    <i class="fas play-track fa-play" aria-hidden="true"></i>
+                                    <div class="label">
+                                        <h3>${data.items[i].name}</h3>
+                                        <p>
+                                            ${data.items[i].artists[0].name}
+                                        </p>
+                                    </div>
+                                </section>`;
+                }
                 document.querySelector('#tracks').innerHTML += template;
                 }
             }
