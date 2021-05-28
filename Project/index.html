@@ -15,72 +15,44 @@
         <main>
             <section id="featured-recipe">
                 <nav>
-                    <button id="card">Recipes</button>
-                    <button id="image">Photos</button>
-                    <button id="video">Video</button>
+                    <button id="card" onclick="showRecipe(event)" class="clicked">Recipes</button>
+                    <button id="image" onclick="showImage(event)">Photos</button>
+                    <button id="video" onclick="showVideo(event)">Video</button>
                 </nav>
                 <div class="content">
                     <div id="recipe-card">
-                        <h2 class="title">Recipe</h2>
+                        <h2 class="title">Recipe:</h2>
                         <div class="ing">
-                            <h3>Ingredients</h3>
-                            <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                            <h3>Ingredients:</h3>
+                            <ul id="ing-list">
+                                <!-- click to add -->
                             </ul>
                         </div>
                         <div class="dir">
-                            <h3>Directions</h3>
-                            <ol>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                            <h3>Directions:</h3>
+                            <ol id="dir-list">
+                                <!-- click to add -->
                             </ol>
                         </div>
                     </div>
-                    <div id="photo-card" style="background-image:url(''); display: none;">
+                    <div id="photo-card" style="background-image:url('photos/soba.jpeg'); display: none;">
                         <!-- chang image using buttons -->
-                        <button class="prev">&lsaquo;</button>
-                        <button class="next">&rsaquo;</button>
+                        <button class="prev" onclick="prev(event)">&lsaquo;</button>
+                        <button class="next" onclick="next(event)">&rsaquo;</button>
                     </div>
-                    <div id="video-card" style="background-image:url('icons/film.png'); display: none;">
+                    <div id="video-card" style="display: none;">
                         <!-- link to video -->
                     </div>
                 </div>
             </section>
             <section id="projects">
                 <div class="script">
-                    <h2>Explanation</h2>
-                    <input type="text" placeholder="search...">
+                    <h2>Click A Folder</h2>
+                    <i class="fas fa-long-arrow-alt-right fa-3x"></i>
+                    <!-- <input type="text" placeholder="search..."> -->
                 </div>
                 <div id="scroll-files">
-                    <div class="file">
-                        <h3>File1</h3>
-                        <img src='' /> 
-                    </div>
-                    <div class="file">
-                        <h3>File2</h3>
-                        <img src='' /> 
-                    </div>
-                    <div class="file">
-                        <h3>File3</h3>
-                        <img src='' /> 
-                    </div>
-                    <div class="file">
-                        <h3>File4</h3>
-                        <img src='' /> 
-                    </div>
-                    <div class="file">
-                        <h3>File5</h3>
-                        <img src='' /> 
-                    </div>
-                    <div class="file">
-                        <h3>File6</h3>
-                        <img src='' /> 
-                    </div>
+                    <!-- filled by data -->
                 </div>
             </section>
         </main>
@@ -95,5 +67,6 @@
             </section>           
         </footer>
         <script src="https://kit.fontawesome.com/62a7c74d0d.js" crossorigin="anonymous"></script>
+        <script  src="index.js"></script>
     </body>
 </html>

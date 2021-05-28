@@ -2,8 +2,21 @@
     font-family: 'Amatic SC', cursive;
     font-size: 1.1em;
 }
+h1,h2,h3,p,li,ol,ul{
+    margin: 0;
+    padding: 0;
+}
 h1{font-size: 5em}
-
+h2{font-size: 1.3em}
+h3{
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+p{font-size: 0.9em}
+li{
+    font-size: 0.7em;
+    margin-left:20px;
+}
 body {
     display: grid;
     overflow: scroll;
@@ -45,13 +58,16 @@ main{
     justify-content: center;
     align-items: center;
     width: 100vw;
+    min-height: 60vh;
 
 }
 #recipe-card{
     height: auto;
+    min-height: 50vh;
     width: 90vw;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 .title{
     width: 100%;
@@ -70,14 +86,17 @@ main{
 /* photo-card */
 #photo-card{
     display: flex;
-    height: 100%;
+    height: 60vh;
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 /* video-card */
 #video-card{
-    height: 100%;
+    min-height: 50vh;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -100,19 +119,43 @@ main{
 }
 .script{
     width: 20%;
+    display: inline;
+    text-align: center;
 }
 .file{
     height: 100%;
     width: 25%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-end;
+    background-image: url('icons/folder.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.file > p {
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    opacity: 0.4;
+    margin-top: 15px;
+}
+
+.file:hover > p{
+    opacity: 1;
+}
+/* img */
+img{
+    height: 40%;
+    width: auto;
+}
+/* video */
+#video-card{
     justify-content: center;
     align-items: center;
-    background-image: url('icons/folder.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
-/* .file > img{
-} */
 /* Footer */
 footer{
     grid-template-areas: d;
@@ -143,13 +186,15 @@ footer{
 .scroll::-webkit-scrollbar{
     display: none;
 }
+
+/* buttons */
 #card, #image, #video{
     border-top-left-radius: 40%;
     border-top-right-radius: 40%;
     padding-left: 30px;
     padding-right: 30px;
 }
-#card{
-    background-color: white;
+.clicked{
+    background-color:white;
     border-bottom: 0px;
 }
